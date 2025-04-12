@@ -3,31 +3,17 @@ body {
     margin: 0;
     padding: 0;
   }
-  
-  nav {
-    background: #333;
-    padding: 1em;
-  }
-  
-  nav a {
-    color: white;
-    margin-right: 1em;
-    text-decoration: none;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  section {
-    padding: 1em;
-    display: none;
-  }
-  
   section.active {
     display: block;
   }
   
   canvas {
     border: 1px solid black;
+  }
+  section {
+    border: 11px solid hsl(var(--foreground-color));
+    border-radius: 10px;
+    box-shadow: 1 1 10px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    display: none;
   }
