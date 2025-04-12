@@ -1,0 +1,14 @@
+.creator-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.creator-container p {
+    margin: 0;
+}
+
+.creator-code {
+    text-transform: uppercase;
+}
