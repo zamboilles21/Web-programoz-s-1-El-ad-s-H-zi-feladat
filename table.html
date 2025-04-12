@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Táblázat – CRUD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Web-programozás-1 Előadás Házi feladat</h1>
+
+  <form id="dataForm">
+    <input type="text" id="name" placeholder="Név" required>
+    <input type="number" id="age" placeholder="Kor" required min="1" max="120">
+    <input type="text" id="city" placeholder="Város" required minlength="2" maxlength="30">
+    <input type="text" id="job" placeholder="Szakma" required minlength="2" maxlength="30">
+    <button type="submit">Hozzáadás / Módosítás</button>
+  </form>
+
+  <input type="text" id="searchInput" placeholder="Keresés...">
+
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th data-column="name">Név</th>
+        <th data-column="age">Kor</th>
+        <th data-column="city">Város</th>
+        <th data-column="job">Szakma</th>
+        <th>Művelet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Dinamikusan generált sorok -->
+    </tbody>
+  </table>
+
+  <footer>
+    <p>Készítette: Kiss Márk (ABC123)</p>
+  </footer>
+
+  <script src="table.js"></script>
+</body>
+</html>
