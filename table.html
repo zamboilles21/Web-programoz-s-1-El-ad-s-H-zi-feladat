@@ -8,8 +8,22 @@
   <link rel="stylesheet" href="Assets/Styles/header-footer.css">
 </head>
 <body>
+  <header>
   <h1>Web-programozás-1 Előadás Házi feladat</h1>
 
+
+  <nav>
+    <ul>
+        <a href="index.html">Főoldal</a>
+        <a href="html5.html">HTML 5 példák</a>
+        <a href="table.html">CRUD</a>
+    </ul>
+</nav>
+</header>
+<div class="teszteles">
+
+  
+</div>
   <form id="dataForm">
     <input type="text" id="name" placeholder="Név" required>
     <input type="number" id="age" placeholder="Kor" required min="1" max="120">
@@ -17,8 +31,9 @@
     <input type="text" id="job" placeholder="Szakma" required minlength="2" maxlength="30">
     <button type="submit">Hozzáadás / Módosítás</button>
   </form>
-
+  
   <input type="text" id="searchInput" placeholder="Keresés...">
+
 
   <table id="dataTable">
     <thead>
