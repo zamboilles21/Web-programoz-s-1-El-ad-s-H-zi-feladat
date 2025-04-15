@@ -16,6 +16,11 @@
     box-sizing: border-box;
   }
   
+a.active {
+    cursor: pointer;
+    background-color: green;
+    color: indianred;
+}
 body {
     margin: 25px;
     padding: 25px;
