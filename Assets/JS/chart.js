@@ -1,41 +1,34 @@
-    const ctx = document.getElementById('barChart').getContext('2d');
-    let chart;
+const ctx = document.getElementById('myChart').getContext('2d');
 
-    const labels = ["A", "B", "C", "D", "E"];
-    const table = document.getElementById("data-table");
+const chart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek'],
+    datasets: [{
+      label: 'Kiválasztott sor adatai',
+      data: [],
+      borderColor: 'blue',
+      backgroundColor: 'lightblue',
+      fill: false,
+      tension: 0.3
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
 
-    table.querySelectorAll("tbody tr").forEach((row, index) => {
-      row.addEventListener("click", () => {
-        const data = Array.from(row.children).map(cell => parseInt(cell.textContent));
-
-        if (chart) chart.destroy();
-
-        chart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: labels,
-            datasets: [{
-              label: `Sor ${index + 1} adatai`,
-              data: data,
-              backgroundColor: 'rgba(54, 162, 235, 0.7)',
-              borderColor: 'rgba(54, 162, 235, 1)',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            },
-            plugins: {
-              legend: {
-                display: true
-              }
-            }
-          }
-        });
-      });
-    });
+const rows = document.querySelectorAll('#dataTable tbody tr');
+rows.forEach(row => {
+  row.addEventListener('click', () => {
+    const cells = Array.from(row.querySelectorAll('td')).slice(1);
+    const values = cells.map(cell => Number(cell.textContent));
+    chart.data.datasets[0].data = values;
+    chart.update();
+  });
+});
